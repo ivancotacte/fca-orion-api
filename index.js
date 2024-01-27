@@ -29,7 +29,7 @@ if (!fs.existsSync(configPath)) {
     fs.writeFileSync(configPath, configContent);
 }
 
-const { MainName } = require('../config.js');
+const { MainName } = configPath;
 const InstantUpdate = require('./instantUpdate.js');
 
 function setOptions(globalOptions, options) {
