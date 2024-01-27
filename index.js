@@ -19,8 +19,8 @@ const success = chalk.greenBright;
 
 const configContent = `
 module.exports = {
-	MainName: "[ test ]",
-	AutoUpdate: true
+	MainName: "[ FCA-ORION ]",
+	AutoUpdate: false
 };
 `;
 
