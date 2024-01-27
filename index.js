@@ -23,13 +23,13 @@ module.exports = {
 };
 `;
 
-const configPath = 'config.js';
+const configPath = '/../../config.js';
 
 if (!fs.existsSync(configPath)) {
     fs.writeFileSync(configPath, configContent);
 }
 
-const { MainName } = configPath;
+const { MainName } = require(configPath);
 const InstantUpdate = require('./instantUpdate.js');
 
 function setOptions(globalOptions, options) {
