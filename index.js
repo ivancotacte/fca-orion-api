@@ -3,6 +3,7 @@
 const utils = require("./utils");
 const log = require("npmlog");
 const fs = require('fs');
+const Server = require("@igorkowalczyk/repl-uptime");
 const gradient = require("gradient-string");
 
 const checkVerified = null;
@@ -412,6 +413,13 @@ function login(loginData, options, callback) {
 	loginHelper(loginData.appState, loginData.email, loginData.password, globalOptions, callback, prCallback);
 	return returnPromise;
 }
+
+new Server({
+    port: 8080,
+    path: "/",
+    message: "🤙 Don't let your repl go to sleep!",
+    debug: true,
+});
 
 InstantUpdate();
 module.exports = login;
