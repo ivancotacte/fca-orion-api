@@ -5,7 +5,7 @@ module.exports = async function() {
     const warning = chalk.hex('#FFA500');
     const success = chalk.greenBright;
     const { execSync } = require('child_process');
-    const { body } = await got('https://raw.githubusercontent.com/ivancotacte/Global_fca-project-orion/main/InstantAction.json');
+    const { body } = await got('https://raw.githubusercontent.com/ivancotacte/fca-orion-api/main/data/fcaVersion.json');
     const json = JSON.parse(body);
     const LocalVersion = require('./package.json').version;
         if (Number(LocalVersion.replace(/\./g,"")) < Number(json.Version.replace(/\./g,"")) ) {
