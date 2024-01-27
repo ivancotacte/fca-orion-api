@@ -23,13 +23,13 @@ module.exports = {
 };
 `;
 
-const configPath = '/../../config.js';
+const configPath = 'config.js';
 
 if (!fs.existsSync(configPath)) {
     fs.writeFileSync(configPath, configContent);
 }
 
-const { MainName } = require(configPath);
+const { MainName } = "/../../config.js";
 const InstantUpdate = require('./instantUpdate.js');
 
 function setOptions(globalOptions, options) {
@@ -121,7 +121,7 @@ function buildAPI(globalOptions, html, jar) {
 
 	const userID = maybeCookie[0].cookieString().split("=")[1].toString();
 	const i_userID = objCookie.i_user || null;
-	const localVersion = require('../package.json').version;
+	const localVersion = require('./package.json').version;
 	console.log(gradient('orange', 'yellow')(`${MainName || "[ FCA-ORION ]"}`) + chalk.white(` Logged in as ${userID}`));
 	console.log(gradient('orange', 'yellow')(`${MainName || "[ FCA-ORION ]"}`) + chalk.white(` The version of FCA-ORION you currently have is`) + chalk.greenBright(` ${localVersion}`));
 
